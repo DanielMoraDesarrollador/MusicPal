@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.user.musicpal.R;
 import com.example.user.musicpal.controller.ControllerGlobal;
+import com.example.user.musicpal.controller.ExoPlayerGlobal;
 import com.example.user.musicpal.controller.MediaPlayerGlobal;
 import com.example.user.musicpal.model.pojo.Cancion;
 import com.example.user.musicpal.utils.ResultListener;
@@ -130,12 +131,14 @@ public class AdapterCanciones extends RecyclerView.Adapter {
                 @Override
                 public void onClick(View view) {
                     Cancion cancionAreproducir = listaDeCanciones.get(getAdapterPosition());
-                    try {
+                    ExoPlayerGlobal exoPlayerGlobal = ExoPlayerGlobal.getInstance();
+                    exoPlayerGlobal.setearPlaylist(listaDeCanciones, true, getAdapterPosition());
+                    /*try {
                         MediaPlayerGlobal mediaPlayerGlobal = MediaPlayerGlobal.getInstance();
                         mediaPlayerGlobal.setearPlaylist(listaDeCanciones, true, getAdapterPosition());
                     } catch (IOException e) {
                         e.printStackTrace();
-                    }
+                    }*/
                     notificadorCancionCelda.notificarCeldaClikeada(cancionAreproducir);
                 }
             });
@@ -143,12 +146,14 @@ public class AdapterCanciones extends RecyclerView.Adapter {
                 @Override
                 public void onClick(View v) {
                     Cancion cancionAreproducir = listaDeCanciones.get(getAdapterPosition());
-                    try {
+                    ExoPlayerGlobal exoPlayerGlobal = ExoPlayerGlobal.getInstance();
+                    exoPlayerGlobal.setearPlaylist(listaDeCanciones, true, getAdapterPosition());
+                    /*try {
                         MediaPlayerGlobal mediaPlayerGlobal = MediaPlayerGlobal.getInstance();
                         mediaPlayerGlobal.setearPlaylist(listaDeCanciones, true, getAdapterPosition());
                     } catch (IOException e) {
                         e.printStackTrace();
-                    }
+                    }*/
                     notificadorCancionCelda.notificarCeldaClikeada(cancionAreproducir);
                 }
             });

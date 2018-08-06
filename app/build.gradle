@@ -41,6 +41,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:11.6.0'
     implementation 'com.google.android.exoplayer:exoplayer-core:2.8.2'
     implementation 'com.google.android.exoplayer:exoplayer-ui:2.8.2'
+    implementation 'com.google.android.exoplayer:exoplayer:2.8.2'
 
 
 

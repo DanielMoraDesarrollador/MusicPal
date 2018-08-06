@@ -42,12 +42,12 @@ public class MediaPlayerGlobal implements MediaPlayer.OnPreparedListener {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        notificadorQueTermino = new NotificadorQueTermino() {
+      /*  notificadorQueTermino = new NotificadorQueTermino() {
             @Override
             public void cambioCancion() {
                 //esto esta solo para que no de null
             }
-        };
+        };*/
     }
 
     public static MediaPlayerGlobal getInstance() {
@@ -82,7 +82,7 @@ public class MediaPlayerGlobal implements MediaPlayer.OnPreparedListener {
                     cancion = cancionSiguiente;
                     try {
                         mediaPlayer.reset();
-                        notificadorQueTermino.cambioCancion();
+                        //notificadorQueTermino.cambioCancion();
                         mediaPlayer.setDataSource(cancionSiguiente.getUrlPreview());
                         mediaPlayer.prepareAsync();
                     } catch (IOException e) {
@@ -117,8 +117,8 @@ public class MediaPlayerGlobal implements MediaPlayer.OnPreparedListener {
 
     }
 
-
     public interface NotificadorQueTermino {
         public void cambioCancion();
     }
+
 }
